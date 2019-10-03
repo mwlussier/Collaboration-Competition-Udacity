@@ -52,7 +52,7 @@ It must be specified that for both actor and critic network, only the fully conn
 
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_256.PNG)
 
-4. (256, 256, 128)
+4. (256, 256, 128) - Not resolve in 2,000 episodes.
 
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_128.PNG)
 
