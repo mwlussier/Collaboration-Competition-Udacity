@@ -51,7 +51,7 @@ It must be specified that for both actor and critic network, only the fully conn
 
 3. (128, 256, 128) - Resolve in less than 1,200 episodes.
 
-![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_256_128.png)
+![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_256_128.PNG)
 
 4. (256, 256, 128) - Not resolve in 2,000 episodes.
 
