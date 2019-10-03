@@ -26,3 +26,7 @@ It is not needed to install Unity - you can download the environment provided by
 Then, place the file in the _p3_collab-compet/_ folder in the DRLND GitHub repository, and unzip (or decompress) the file.
 
 ------
+
+To train the agents, follow the steps in Tennis_Collaboration_Competition.ipynb
+
+To see the agent perform in the environment, follow the steps in Tennis_Collaboration_Competition_Control_test.ipynb
