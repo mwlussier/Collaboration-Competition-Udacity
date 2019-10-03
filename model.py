@@ -12,7 +12,7 @@ def hidden_init(layer):
 class Actor(nn.Module):
     """Actor (Policy) Model."""
 
-    def __init__(self, state_size, action_size, seed, fc1_units=128, fc2_units=128):
+    def __init__(self, state_size, action_size, seed, fc1_units=128, fc2_units=256):
         """Initialize parameters and build model.
         Params
         ======
@@ -48,25 +48,17 @@ class Actor(nn.Module):
         x = F.relu(self.fc2(x)) 
         
         return F.tanh(self.fc3(x))
-        
-        #h3 = (self.fc3(x))
-        #norm = torch.norm(h3)
 
-        ## h3 is a 2D vector (a force that is applied to the agent)
-        ## we bound the norm of the vector to be between 0 and 10
-        #return 10.0*(F.tanh(norm))*h3/norm if norm > 0 else 10*h3
-
-   
     
 class Critic(nn.Module):
     """Critic (Value) Model."""
-    # def __init__(self, state_size, action_size, seed, fcs1_units=400, fc2_units=300):
-    def __init__(self, state_size, action_size, seed, fcs1_units=128, fc2_units=128):
+    
+    def __init__(self, state_size, action_size, seed, fcs1_units=128, fc2_units=256):
         """Initialize parameters and build model.
         Params
         ======
-            state_size (int): Dimension of each state
-            action_size (int): Dimension of each action
+            state_size (int): Dimension of each state; state_size * num_agents
+            action_size (int): Dimension of each action; action_size * num_agents
             seed (int): Random seed
             fcs1_units (int): Number of nodes in the first hidden layer
             fc2_units (int): Number of nodes in the second hidden layer
@@ -91,6 +83,9 @@ class Critic(nn.Module):
 
     def forward(self, state, action):
         """Build a critic (value) network that maps (state, action) pairs -> Q-values."""
+
+        state = state.view(-1, 48)              
+        action = action.view(-1, 4)             
         
         xs = F.relu(self.fcs1(state))
         xs = self.bn1(xs)
@@ -98,13 +93,4 @@ class Critic(nn.Module):
         x = F.relu(self.fc2(x))
         return self.fc3(x)
     
-
-    #def forward(self, state, action):
-        #"""Build a critic (value) network that maps (state, action) pairs -> Q-values."""
-        #state = state.view(-1, 48)              # reshape from 256 x 24 to 128 x 48
-        #action = action.view(-1, 4)             # reshape from 256 x 2 to 128 x 4
-
-        #xs = F.leaky_relu(self.fcs1(state))
-        #x = torch.cat((xs, action), dim=1)
-        #x = F.leaky_relu(self.fc2(x))
-        #return self.fc3(x)
+ 
