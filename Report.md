@@ -54,7 +54,7 @@ It must be specified that for both actor and critic network, only the fully conn
 
 4. (256, 256, 128)
 
-![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_128.png)
+![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_128.PNG)
 
 ## Future Work
 * The natural amelioration would be to complexify the network architecture by adding more hidden layers to both actor and critic networks. Further exploration in the others hyperparameters such as the Sigma variable in the noise function could help increase the performance and add robustness to the model.
