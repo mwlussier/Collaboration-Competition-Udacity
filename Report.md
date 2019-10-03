@@ -17,7 +17,7 @@ The batch normalization is used to apply a normalization process to the outputs 
 
 ## Result
 The training was stopped if the average score was higher than 0.5 and the number of episodes was higher than 1500 or if the average score was higher than 1.5.
-The best model achieved an average score of 1.51 after 864 episodes of training. It achieved an average score of 0.50 or more between the 800 and 861 episode. The hyperparameters used are as follow:
+The best model achieved an average score of 1.51 after 864 episodes of training. It achieved an average score of 0.50 or more between the 800 and 864 episode. The hyperparameters used are as follow:
 
 * BUFFER_SIZE:       1e6
 * BATCH_SIZE:        128
