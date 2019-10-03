@@ -1,4 +1,4 @@
-## Reacher Project
+## Collaboration and Competition Project
 
 To resolve the project, a **Multi Agent Deep Deterministic Policy Gradient** (MADDPG) was used.
 
@@ -40,13 +40,13 @@ It must be specified that for both actor and critic network, only the fully conn
 
 
 (128, 128, 128)
-
+![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_128_128.png)
 (128, 128, 256)
-
+![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_128_256.png)
 (256, 256, 256)
-
+![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_256.png)
 (256, 256, 128)
-
+![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_128.png)
 
 ## Future Work
 * The natural amelioration would be to complexify the network architecture by adding mor hidden layers to both actor and critic networks. 
