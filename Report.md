@@ -16,7 +16,8 @@ The model architecture include for both actor and critic networks, three (3) ful
 The batch normalization is used to apply a normalization process to the outputs of a previous layer such as it's done during the preprocessing phase of the initial data. This should increase the stability of the network and accelerate the learning process. Batch normalization is used with its default variables.
 
 ## Result
-The best model achieved an average score of xxx after xxx episodes of training. It achieved an average score of 0.50 or more at best 1500 episodes. The hyperparameters used are as follow:
+The training was stopped if the average score was higher than 0.5 and the number of episodes was higher than 1500 or if the average score was higher than 1.5.
+The best model achieved an average score of 1.51 after 864 episodes of training. It achieved an average score of 0.50 or more between the 800 and 861 episode. The hyperparameters used are as follow:
 
 * BUFFER_SIZE:       1e6
 * BATCH_SIZE:        128
@@ -39,16 +40,20 @@ It must be specified that for both actor and critic network, only the fully conn
 (BATCH_SIZE, FC1_UNITS, FC2_UNITS)
 
 
-* (128, 128, 128)
+1. (128, 128, 128)
+
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_128_128.png)
 
-* (128, 128, 256)
+2. (128, 128, 256)
+
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_128_256.png)
 
-* (256, 256, 256)
+3. (256, 256, 256)
+
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_256.PNG)
 
-* (256, 256, 128)
+4. (256, 256, 128)
+
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_128.png)
 
 ## Future Work
