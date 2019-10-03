@@ -34,6 +34,7 @@ For both Actor and Critic network:
 * FC1_UNITS:         128
 * FC2_UNITS:         256
 
+![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_128_256.png)
 
 ## Experimentation
 It must be specified that for both actor and critic network, only the fully connected layers size as been changed and that the batch size match the first fully conneccted layer size:
@@ -48,13 +49,18 @@ It must be specified that for both actor and critic network, only the fully conn
 
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_128_256.png)
 
-3. (256, 256, 256) - Resolve in 1,785 episodes.
+3. (128, 256, 128) - Resolve in less than 1,200 episodes.
 
-![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_256.PNG)
+![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_256_128.png)
 
 4. (256, 256, 128) - Not resolve in 2,000 episodes.
 
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_128.PNG)
+
+5. (256, 256, 256) - Resolve in 1,785 episodes.
+
+![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_256.PNG)
+
 
 ## Future Work
 * The natural amelioration would be to complexify the network architecture by adding more hidden layers to both actor and critic networks. Further exploration in the others hyperparameters such as the Sigma variable in the noise function could help increase the performance and add robustness to the model.
