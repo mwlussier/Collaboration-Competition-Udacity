@@ -40,7 +40,7 @@ It must be specified that for both actor and critic network, only the fully conn
 (BATCH_SIZE, FC1_UNITS, FC2_UNITS)
 
 
-1. (128, 128, 128) - Not resolve in 2000 episodes.
+1. (128, 128, 128) - Not resolve in 2,000 episodes.
 
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_128_128.png)
 
@@ -48,7 +48,7 @@ It must be specified that for both actor and critic network, only the fully conn
 
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_128_256.png)
 
-3. (256, 256, 256) - Resolve in 1785 episodes.
+3. (256, 256, 256) - Resolve in 1,785 episodes.
 
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_256.PNG)
 
