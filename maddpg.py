@@ -17,7 +17,7 @@ LR_ACTOR = 1e-5 #2e-4         # learning rate of the actor
 LR_CRITIC = 1e-4 #2e-4         # learning rate of the critic
 WEIGHT_DECAY = 0        # L2 weight decay
 
-#UPDATE_NETWORK_FREQUENCY = 3
+UPDATE_FREQENCY = 3
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -45,6 +45,8 @@ class Agent():
         self.actor_optimizer = optim.Adam(self.actor_local.parameters(), lr=LR_ACTOR)
 
         # Critic Network (w/ Target Network)
+        print(state_size * num_agents)
+        print(action_size * num_agents)
         self.critic_local = Critic(state_size * num_agents, action_size * num_agents, random_seed).to(device)
         self.critic_target = Critic(state_size * num_agents, action_size * num_agents, random_seed).to(device)
         self.critic_optimizer = optim.Adam(self.critic_local.parameters(), lr=LR_CRITIC, weight_decay=WEIGHT_DECAY)
@@ -62,9 +64,9 @@ class Agent():
 
         # Learn, if enough samples are available in memory
         if len(self.memory) > BATCH_SIZE:
-            #for _ in range(UPDATE_NETWORK_FREQUENCY):
-            experiences = self.memory.sample()
-            self.learn(experiences, GAMMA)
+            for _ in range(UPDATE_FREQENCY):
+                experiences = self.memory.sample()
+                self.learn(experiences, GAMMA)
 
     def act(self, state, add_noise=True):
         """Returns actions for given state as per current policy."""
@@ -118,8 +120,8 @@ class Agent():
         self.actor_optimizer.step()
 
         # ----------------------- update target networks ----------------------- #
-        self.soft_update(self.critic_local, self.critic_target, TAU)
-        self.soft_update(self.actor_local, self.actor_target, TAU)                     
+        self.soft_update(self.critic_local, self.critic_target, tau=TAU)
+        self.soft_update(self.actor_local, self.actor_target, tau=TAU)                     
 
     def soft_update(self, local_model, target_model, tau=1.0):
         """Soft update model parameters.
@@ -152,6 +154,7 @@ class OUNoise:
         """Update internal state and return it as a noise sample."""
         x = self.state
         dx = self.theta * (self.mu - x) + self.sigma * np.array([random.random() for i in range(len(x))])
+        #dx = self.theta * (self.mu - x) + self.sigma * np.array([random.standard_normal(self.size) for i in range(len(x))])
         self.state = x + dx
         return self.state
 
