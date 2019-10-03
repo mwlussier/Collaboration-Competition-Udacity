@@ -34,22 +34,25 @@ For both Actor and Critic network:
 * FC2_UNITS:         256
 
 
-It seem, for this environment, that as we raise our network complexity, we reduce the number of episode needed to reach our goal.
+## Experimentation
 It must be specified that for both actor and critic network, only the fully connected layers size as been changed and that the batch size match the first fully conneccted layer size:
 (BATCH_SIZE, FC1_UNITS, FC2_UNITS)
 
 
-(128, 128, 128)
+* (128, 128, 128)
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_128_128.png)
-(128, 128, 256)
+
+* (128, 128, 256)
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_128_128_256.png)
-(256, 256, 256)
+
+* (256, 256, 256)
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_256.png)
-(256, 256, 128)
+
+* (256, 256, 128)
 ![alt text](https://github.com/mwlussier/Collaboration-Competition-Udacity/blob/master/images/collab_comp_256_256_128.png)
 
 ## Future Work
-* The natural amelioration would be to complexify the network architecture by adding mor hidden layers to both actor and critic networks. 
+* The natural amelioration would be to complexify the network architecture by adding more hidden layers to both actor and critic networks. Further exploration in the others hyperparameters such as the Sigma variable in the noise function could help increase the performance and add robustness to the model.
 * An interesting implementation would be to resolve this environment using Monte Carlo Tree Search (MCTS) in continuous action space [1].
 
 [1] [http://liacs.leidenuniv.nl/~plaata1/papers/pal2018.pdf](http://liacs.leidenuniv.nl/~plaata1/papers/pal2018.pdf)
